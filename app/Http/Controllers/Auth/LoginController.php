@@ -26,15 +26,42 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+   
+
+    protected function authenticated()
     {
-        $this->middleware('guest')->except('logout');
+        if (auth()->user()->role == 1) {
+                
+            return redirect()->route('admin.home');
+        }
+        else if(auth()->user()->role == 2)
+        {
+            return redirect()->route('authorizer.home');
+        }
+        else if(auth()->user()->role == 3)
+        {
+            return redirect()->route('pesticides.index');
+        }
+        else if(auth()->user()->role==4)
+        {
+            return redirect()->route('account.index');
+        }
+
     }
+        public function __construct()
+        {
+            $this->middleware('guest')->except('logout');
+        }
+
+   
+
+
+
 }

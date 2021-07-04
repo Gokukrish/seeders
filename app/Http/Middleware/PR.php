@@ -15,12 +15,9 @@ class PR
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->role == 1){
-            return redirect('pesticides');
+        if(auth()->user()->role == 3){
+            return $next($request);
         }
-        else{
-
-            return route('login');
-        }
+        return route('login');
     }
 }
