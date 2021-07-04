@@ -1,0 +1,68 @@
+<option>Namdhu Pari Maiyam</option>
+<option>Rama Traders</option>
+<option>M. M.T. Pest control</option>
+<option>Santhanam Agro Service</option>
+<option>Deva Fertilizers</option>
+<option>Murugan Agro Agencies</option>
+<option>Ambal Agro Centre</option>
+<option>Aruna Agri Clinic</option>
+<option>Kathiravan Fertilizers</option>
+<option>Rashi Trader</option>
+<option>S.K. Agency</option>
+<option>Sree Gubheran Enterprises</option>
+<option>Kumaran Agencies</option>
+<option>Sri Vinayaga Agri Clini</option>
+<option>Sri Balaji Agro Centre</option>
+<option>Coromandel International Ltd.</option>
+<option>Annai Uzhavan Agri Clinic & Farm Consultancy Services</option>
+<option>Marutham Agri Clinic & Farm Consultancy Services</option>
+<option>Murugan Agro Service</option>
+<option>S.K.M. Traders</option>
+<option>Sri Balaji Agencies</option>
+<option>Sri Dhinesh Agencies</option>
+<option>Sri Srinivasa Agencies</option>
+<option>Delta Agro</option>
+<option>Santhavel Agro Service</option>
+<option>Sri Uzhavan Agri Clinic and Consultancy Services</option>
+<option>Jayalakshmi Pannai Service</option>
+<option>Vairakannu Agro Centre</option>
+<option>Ariharan Agri Agency</option>
+<option>Greenstar Fertilizers Ltd</option>
+<option>Vairakkannu Fertilizers</option>
+<option>Saranarayana Agencies</option>
+<option>Srimath Thamam Uzhavar Oulagam</option>
+<option>Gnanambiga  Traders</option>
+<option>Pudhuvai Agro Products Producer Company Limited</option>
+<option>Kissan HI-TEC</option>
+<option>Sabari Agri Clinic</option>
+<option>Sri Pachiammal Agro Centre</option>
+<option>Thillai Agro Centre</option>
+<option>Dharani Agro Agency</option>
+<option>Sri Lakshmi Fertilizers</option>
+<option>Venkateswara Agro Centre</option>
+<option>Royal Agri Clinic</option>
+<option>Sri Velmurugan Fertilizers</option>
+<option>NISSI Agri Clinic</option>
+<option>Sathiya Priya Agro Service</option>
+<option>VDR Agri Clinic</option>
+<option>Lakshmi Agro Centre</option>
+<option>Puduvai Agro Service</option>
+<option>Ishana Enterprises</option>
+<option>Jeeva Agro Service</option>
+<option>National Pest Control and Agro Service</option>
+<option>New Royal Agri Clinic</option>
+<option>PCI Pest Control Private Limited</option>
+<option>Star Agri Clinic</option>
+<option>Mars Enterprise</option>
+<option>Murugan Agro Traders</option>
+<option>NISSI Agri Clinic</option>
+<option>Thirumurugan Fertilizers</option>
+<option>Adma India Limited</option>
+<option>A. M. Krishnamoorthy Chettiar & Sons</option>
+<option>Venkateswara Enterprises</option>
+<option>Madras Fertilizers Ltd.</option>
+<option>Pudhuvai Agro Products</option>
+<option>Producer Company Limited"</option>
+<option>Sumathi Agency</option>
+<option>Venkateswara Enterprises</option>
+<option>Manda Suryanarayana Traders</option>

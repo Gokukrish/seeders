@@ -1,0 +1,196 @@
+
+
+
+
+
+
+
+
+
+/* ===================================
+3. top area 
+==================================== */
+header .top .row {margin-bottom: 0;}
+
+
+header .top {
+	padding:0px 10px 5px 0;
+	margin:0;
+	line-height:1;
+	background:#f2f2f2;
+	}
+
+header .top {
+	border-bottom:1px solid #ddd;
+}
+
+header .top ul.topleft-info {
+	list-style: none;
+	margin: 2px 0 0;
+	padding-left: 0;
+	float:left;
+}
+
+header .top ul.topleft-info li{
+	display: inline;
+	margin: 0 2px 0 0;
+	padding:0;
+	font-size:12px;
+	font-weight: 100;
+}
+
+header .top ul.topleft-info li a:hover {
+	text-decoration: none;
+	outline: 0;
+}
+
+body{
+  font-family: 'Palanquin', sans-serif;
+  background-color: cornsilk!important;
+}
+
+.card-header{
+  background-color: rgb(192, 119, 119)!important;
+}
+
+.card-body{
+  background-color:cornsilk;
+}
+
+.form-control:focus{border-color: #ad551b!important;  box-shadow: none!important; -webkit-box-shadow: none;}
+
+ 
+
+
+
+
+
+
+
+.header-wrapper{padding: 8px 0px; border-bottom:1px solid #fff;}
+.header-container{padding:5px 0px;}
+
+/*Logo*/
+.logo {
+  background:url("/images/emblem-dark.png") no-repeat 3px 0;
+  float: left;
+  font-size: 130%;
+  line-height: 125%;
+  min-height: 103px;
+  padding-left: 5rem;
+}
+.logo a{color:#000;font-size: 90%;display: block;}
+.logo a strong{font-weight:900; display:block;text-decoration: none;} 
+.logo a span{display:block; font-weight:900; font-size:120%;text-decoration: none;}
+
+/*Logo*/
+
+
+
+.header-right{float:right;}
+.float-element{float:left; margin-left:12px;}
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f7fbfe;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  color: #222222;
+}
+
+.section-title h2::before, .section-title h2::after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background: #3498db;
+  display: inline-block;
+}
+
+.section-title h2::before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title h2::after {
+  margin: 0 0 10px 15px;
+}
+
+.section-title p {
+  margin: 15px 0 0 0;
+}
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+
+.form_tab {
+    margin: 0;
+    position: relative;
+    bottom: 0px;
+    padding: 8px 30px 8px 15px !important;
+    font-weight: bold;
+    font-family: Arial !important;
+    font-size: 9pt !important;
+    width: 190px;
+    color: white !important;
+    background: #2d93f7;
+    border-radius: 0px 15px 15px 0px;
+    /* background: url(../../Images/link.jpg) no-repeat right center; */
+}
+
+.form_tab1{
+	color:white;
+	background-color: cornflowerblue;
+	border-radius: 5px;
+	padding-left: 10px;
+
+}
+
+
+
+.img {
+	width:300px;
+	height:300px;
+	}
+
+
+
+.table_css{
+	border-spacing: 0;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+
+.display_bar{
+	background: linear-gradient(#10083b, #9198e5);
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 20px;
+}
+

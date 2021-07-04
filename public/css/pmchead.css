@@ -1,0 +1,33 @@
+.logo {
+    background: url(../ajax/libs/assets/images/emblem-dark.png) no-repeat 3px 0;
+    float: left;
+    font-size: 140%;
+    line-height: 125%;
+    min-height: 103px;
+    padding-left: 5rem;
+}
+
+.header-right {
+    float: right;
+}
+
+.right-content {
+    padding: 10px;
+}
+.float-element {
+    float: left;
+    margin-left: 12px;
+}
+
+.sw-logo {
+    display: inline-block;
+}
+
+.clearfix{
+    overflow:auto;
+}
+
+@media (min-width: 1200px)
+.container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1140px;
+}
