@@ -20,7 +20,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('pesticidesAo.store') }}" method="POST">
+            <form action="{{ route('pesticides.store') }}" method="POST">
                 @csrf
                 
                 <div class="row">

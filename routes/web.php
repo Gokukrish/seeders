@@ -20,7 +20,7 @@ Route::resource('/form2','Form2Controller');
 Route::resource('/form3','Form3Controller');
 Route::resource('/form4','Form4Controller');
 Route::resource('/form5','Form5Controller');
-Route::resource('/fertilizer','FertilizerAoController');
+Route::resource('/fertilizerAo','FertilizerAoController');
 Route::resource('/pesticides','PesticidesAoController')->middleware('pr');
 Route::resource('/seed','SeedController');
 });

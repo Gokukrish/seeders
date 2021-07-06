@@ -36,10 +36,11 @@
                 </div>
             </div>
         </section>
+    <div>
         <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand " href="{{ url('/') }}">
-                    AGRICULTURE DEPARTMENT
+                    
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -86,8 +87,9 @@
                 </div>
             </div>
         </nav>
+    </div>
                          
-    <div class="container ">
+    <div class="container container-color ">
         @yield('content')
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.js"

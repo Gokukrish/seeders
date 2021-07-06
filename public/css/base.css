@@ -50,17 +50,25 @@ body{
 }
 
 .card-header{
-  background-color: rgb(192, 119, 119)!important;
+  background-color: rgb(51, 87, 204)!important;
+  color:white;
 }
 
 .card-body{
-  background-color:cornsilk;
+  background-color:white!important;
 }
 
 .form-control:focus{border-color: #ad551b!important;  box-shadow: none!important; -webkit-box-shadow: none;}
 
  
+.container-color{ 
+  background-color:white!important;
+  border-radius: 20px !important;
+  position: relative;
+  text-align: center !important;
+  padding:20px 20px;
 
+}
 
 
 

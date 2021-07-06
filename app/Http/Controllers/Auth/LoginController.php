@@ -39,7 +39,7 @@ class LoginController extends Controller
     {
         if (auth()->user()->role == 1) {
                 
-            return redirect()->route('admin.home');
+            return redirect()->route('pesticides.index');
         }
         else if(auth()->user()->role == 2)
         {
