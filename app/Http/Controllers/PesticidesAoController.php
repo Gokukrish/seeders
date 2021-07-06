@@ -47,6 +47,7 @@ class PesticidesAoController extends Controller
             ]);
 
             PesticidesAo::create($request->all());
+            return back()->with('success', 'Created Successfully.');
     }
 
     /**
