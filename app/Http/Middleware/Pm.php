@@ -15,6 +15,9 @@ class Pm
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(auth()->user()->role == 4){
+            return $next($request);
+        }
+        return route('login');
     }
 }

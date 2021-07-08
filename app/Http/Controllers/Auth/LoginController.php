@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -33,17 +35,21 @@ class LoginController extends Controller
      *
      * @return void
      */
-   
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
 
     protected function authenticated()
     {
         if (auth()->user()->role == 1) {
                 
-            return redirect()->route('pesticides.index');
+            return redirect()->route('admin.index');
         }
         else if(auth()->user()->role == 2)
         {
-            return redirect()->route('authorizer.home');
+            return redirect()->route('fertilizer.index');
         }
         else if(auth()->user()->role == 3)
         {
@@ -51,16 +57,34 @@ class LoginController extends Controller
         }
         else if(auth()->user()->role==4)
         {
-            return redirect()->route('account.index');
+            return redirect()->route('form4.index');
+        }
+        else if(auth()->user()->role==5)
+        {
+            return redirect()->route('fertilizerAo.index');
+        }
+        else if(auth()->user()->role==6)
+        {
+            return redirect()->route('pesticides.index');
+        }
+        else if(auth()->user()->role==7)
+        {
+            return redirect()->route('seeds.index');
         }
 
     }
-        public function __construct()
+       
+    public function logout(Request $request)
         {
-            $this->middleware('guest')->except('logout');
+            Auth::logout();
+
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
+            return redirect('/login');
         }
 
-   
 
 
 
