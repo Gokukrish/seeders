@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class PR
+class sd
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class PR
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->role == 2){
+        if(auth()->user()->role == 7){
             return $next($request);
         }
         return route('login');

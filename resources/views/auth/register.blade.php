@@ -66,10 +66,12 @@
 
                             <div class="col-md-6">
                                 <select id="role" type="password" class="form-control" name="role" required >
-                                    <option value="1">Agriculture Officer Pesticides</option>
-                                    <option value="2">Agriculture Officer Seeds</option>
+                                    <option value="6">Agriculture Officer Pesticides</option>
+                                    <option value="5">Agriculture Officer Seeds</option>
                                     <option value="3">Pesticides Retailer</option>
-                                    <option value="3">Seeders Retailer</option>
+                                    <option value="7">Seeders Dealer</option>
+                                    <option value="4">Pesticides Manufacturer</option>
+                                    <option value="2">Fertilizer Retailer</option>
                                 </select>
                             </div>
                         </div>

@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class PR
+class Fr
 {
     /**
      * Handle an incoming request.

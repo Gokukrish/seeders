@@ -47,7 +47,7 @@ class LoginController extends Controller
         }
         else if(auth()->user()->role == 3)
         {
-            return redirect()->route('pesticides.index');
+            return redirect()->route('form3.index');
         }
         else if(auth()->user()->role==4)
         {
