@@ -41,6 +41,7 @@
                 <th>Balance</th>
                 <th>Bill No.</th>
                 <th>Remarks</th>
+                <th>Action</th>
             </tr>
         </thead>
         
@@ -65,6 +66,22 @@
             <td>{{$fertilizer->Balance}}</td>
             <td>{{$fertilizer->Bill_No}}</td>
             <td>{{$fertilizer->Remarks}}</td>
+            <td>
+                
+                    <div class="row">
+                    
+                        <button class="btn btn-primary"><a style="color:white;" href="form3\{{$fertilizer->id}}\edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a></button>
+                        &nbsp;
+                        <form action="{{route('form3.destroy',$fertilizer->id)}}" method="post">
+                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            @method('delete')
+                            @csrf
+                        </form>
+                    </div>
+                   
+                
+                
+            </td>
            </tr>
                
             @endforeach

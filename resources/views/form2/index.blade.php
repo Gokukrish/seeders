@@ -31,22 +31,34 @@
                 <th>Invoice Date</th>
                 <th>Quantity Supplied</th>
                 <th>Company</th>
+                <th>Action</th>
             </tr>
         </thead>
         
         <tbody>
 
             @foreach ($fertilizers as $fertilizer)
-           <tr>
-            <td>{{$fertilizer->Date}}</td>
-            <td>{{$fertilizer->Retailer_name}}</td>
-            <td>{{$fertilizer->Product_Name}}</td>
-            <td>{{$fertilizer->Invoice}}</td>
-            <td>{{$fertilizer->Invoice_Date}}</td>
-            <td>{{$fertilizer->Quantity_supplied}}</td>
-            <td>{{$fertilizer->company}}</td>
-           </tr>
-               
+                    <tr>
+                        <td>{{$fertilizer->Date}}</td>
+                        <td>{{$fertilizer->Retailer_name}}</td>
+                        <td>{{$fertilizer->Product_Name}}</td>
+                        <td>{{$fertilizer->Invoice}}</td>
+                        <td>{{$fertilizer->Invoice_Date}}</td>
+                        <td>{{$fertilizer->Quantity_supplied}}</td>
+                        <td>{{$fertilizer->company}}</td>
+                        <td>
+                            <div class="row">
+                    
+                                <a style="color:white;" href="form2\{{$fertilizer->id}}\edit"><button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
+                                &nbsp;
+                                <form action="{{route('form2.destroy',$fertilizer->id)}}" method="post">
+                                    <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    @method('delete')
+                                    @csrf
+                                </form>
+                            </div>
+                        </td>
+                    </tr>  
             @endforeach
         </tbody>
     </table>

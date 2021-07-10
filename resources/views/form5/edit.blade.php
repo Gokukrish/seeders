@@ -24,18 +24,19 @@
             </div>
             @endif
             
-            <form action="{{ route('form5.store') }}" method="POST">
+            <form action="{{ route('form5.update',$form5->id) }}" method="POST">
                 @csrf
-                
+                @method('put')
                 <div class="row">
                 <div class="form-group col-md-6">
                 <label for="Period"> Period of report </label>
-                <input type="month" name="Period" placeholder=" Period of report " class="form-control" />
+                <input type="month" name="Period" value="{{$form5->Period}}" class="form-control" />
                 </div>
                 
                 <div class="form-group col-md-6">
                 <label for="Insecticide_Name"> Name of the Insecticide </label>
                 <select type="text" name="Insecticide_Name" placeholder=" Name of the Insecticide " class="form-control" >
+                    <option >{{$form5->Insecticide_Name}}</option>
                     <option>2,4-D Amine salt</option>
                     <option>2,4-Dichlorophenoxy Acetic Acid</option>
                     <option>Abamectin*</option>
@@ -333,7 +334,7 @@
                 <div class="row">
                 <div class="form-group col-md-6">
                 <label for="Type_Of_Insecticede"> Type of insecticide </label>
-                <select type="text" name="Type_Of_Insecticede" placeholder=" Type of insecticide " class="form-control" >
+                <select type="text" name="Type_Of_Insecticede" value="{{$form5->Type_Of_Insecticede}}" class="form-control" >
                     <option>Imported</option>
                     <option>Manufactured</option>
                 </select>
@@ -341,7 +342,7 @@
                 
                 <div class="form-group col-md-6">
                 <label for="Batch_No"> Batch No. </label>
-                <input type="text" name="Batch_No" placeholder=" Batch No. " class="form-control" />
+                <input type="text" name="Batch_No" value="{{$form5->Batch_No}}" class="form-control" />
                 </div>
                 </div>
                 
@@ -349,12 +350,12 @@
                 <div class="row">
                 <div class="form-group col-md-6">
                 <label for="Date_of_expiry">Date of expiry</label>
-                <input type="date" name="Date_of_expiry" placeholder="Date of expiry" class="form-control" />
+                <input type="date" name="Date_of_expiry" value="{{$form5->Date_of_expiry}}" class="form-control" />
                 </div>
                 
                 <div class="form-group col-md-6">
                 <label for="Total_quantity">Details of total quantity of technical grade insecticide used for formulation(Metric tonnes)</label>
-                <input type="text" name="Total_quantity" placeholder="Details of total quantity of technical grade insecticide used for formulation(Metric tonnes)" class="form-control" />
+                <input type="text" name="Total_quantity" value="{{$form5->Total_quantity}}" class="form-control" />
                 </div>
                 </div>
                 
@@ -362,12 +363,12 @@
                 <div class="row">
                 <div class="form-group col-md-6">
                 <label for="Total_formulated">Total formulated/ Imported Quantity (Metric tonnes)</label>
-                <input type="text" name="Total_formulated" placeholder="Total formulated/ Imported Quantity (Metric tonnes)" class="form-control" />
+                <input type="text" name="Total_formulated" value="{{$form5->Total_formulated}}" class="form-control" />
                 </div>
                 </div>
                 <div class="p-3 mb-4">
                     <div class="text-center">
-                    <button type="submit" name="add" id="add" class="btn btn-primary ">Add</button>
+                    <button type="submit" name="add" id="add" class="btn btn-success ">Add</button>
                     </div>
                 </div>
                 </form>

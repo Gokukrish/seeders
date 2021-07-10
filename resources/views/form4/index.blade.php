@@ -32,20 +32,37 @@
                 <th>Total Quantity Imported/ Manufactured</th>
                 <th>Utilized for formulations </th>
                 <th>Quantity Sold</th>
+                <th style="width: 20%" >Action</th>
+
+                
             </tr>
         </thead>
         <tbody>
 
             @foreach ($fertilizers as $fertilizer)
-           <tr>
-            <td>{{$fertilizer->period}}</td>
-            <td>{{$fertilizer->Insecticide_name}}</td>
-            <td>{{$fertilizer->Type_of_Insecticide}}</td>
-            <td>{{$fertilizer->Batch_no}}</td>
-            <td>{{$fertilizer->Date_Of_expiry}}</td>
-            <td>{{$fertilizer->Total_quantity}}</td>
-            <td>{{$fertilizer->Quantity_utilized}}</td>
-            <td>{{$fertilizer->Quantity_sold}}</td>
+            <tr>
+                <td>{{$fertilizer->period}}</td>
+                <td>{{$fertilizer->Insecticide_name}}</td>
+                <td>{{$fertilizer->Type_of_Insecticide}}</td>
+                <td>{{$fertilizer->Batch_no}}</td>
+                <td>{{$fertilizer->Date_Of_expiry}}</td>
+                <td>{{$fertilizer->Total_quantity}}</td>
+                <td>{{$fertilizer->Quantity_utilized}}</td>
+                <td>{{$fertilizer->Quantity_sold}}</td>
+                <td>
+                    <div class="row">{{--{{route('form4.edit ',$fertilizer->id)}}--}}
+                    
+                        <button class="btn btn-primary"><a style="color:white;" href="/form4/{{$fertilizer->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a></button>
+                        &nbsp;
+                        <form action="{{route('form4.destroy',$fertilizer->id)}}" method="post">
+                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            @method('delete')
+                            @csrf
+                        </form>
+                    </div>
+                   
+                
+                </td>
            </tr>
                
             @endforeach

@@ -39,6 +39,15 @@ class Form5Controller extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'Period'=>'required',
+            'Insecticide_Name'=>'required',
+            'Type_Of_Insecticede'=>'required',
+            'Batch_No'=>'required',
+            'Date_of_expiry'=>'required',
+            'Total_formulated'=>'required',
+            'Total_quantity'=>'required',
+            ]);
         Form5::create($request->all());
         return back()->with('success', 'Created Successfully.');
     }
@@ -62,7 +71,7 @@ class Form5Controller extends Controller
      */
     public function edit(Form5 $form5)
     {
-        //
+        return view('form5.edit',compact('form5'));
     }
 
     /**
@@ -74,7 +83,17 @@ class Form5Controller extends Controller
      */
     public function update(Request $request, Form5 $form5)
     {
-        //
+        $request->validate([
+            'Period'=>'required',
+            'Insecticide_Name'=>'required',
+            'Type_Of_Insecticede'=>'required',
+            'Batch_No'=>'required',
+            'Date_of_expiry'=>'required',
+            'Total_formulated'=>'required',
+            'Total_quantity'=>'required',
+            ]);
+            $form5->update($request->all());
+            return back()->with('success', 'Created Successfully.');
     }
 
     /**
@@ -83,8 +102,12 @@ class Form5Controller extends Controller
      * @param  \App\Form5  $form5
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Form5 $form5)
+    public function destroy($id)
     {
-        //
+        $form5=Form5::find($id); 
+        //return $pesticidesAo;
+        $form5->delete();
+        return redirect()->route('form5.index')
+            ->with('success', 'Product deleted successfully');
     }
 }

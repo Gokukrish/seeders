@@ -14,7 +14,7 @@ class SeedController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -39,7 +39,7 @@ class SeedController extends Controller
             'Month_Year'=>'required',
             'Name'=>'required',
             'Crop'=>'required',
-            'Class_of _Seed'=>'required',
+            'Class_of_Seed'=>'required',
             'Opening_Stock'=>'required',
             'Quantity_Purchased'=>'required',
             'Total_quantity_imported'=>'required',
@@ -71,7 +71,7 @@ class SeedController extends Controller
      */
     public function edit(Seed $seed)
     {
-        //
+        return view('seed.edit',compact('seed'));
     }
 
     /**
@@ -83,7 +83,21 @@ class SeedController extends Controller
      */
     public function update(Request $request, Seed $seed)
     {
-        //
+        $request->validate([
+            'Month_Year'=>'required',
+            'Name'=>'required',
+            'Crop'=>'required',
+            'Class_of_Seed'=>'required',
+            'Opening_Stock'=>'required',
+            'Quantity_Purchased'=>'required',
+            'Total_quantity_imported'=>'required',
+            'Total'=>'required',
+            'Total_quantity_sold'=>'required',
+            'Total_quanttity_exported'=>'required',
+            'Closing_stock'=>'required',
+            ]);
+            $seed->update($request->all());
+            return back()->with('success', 'Created Successfully.');
     }
 
     /**
@@ -94,6 +108,10 @@ class SeedController extends Controller
      */
     public function destroy(Seed $seed)
     {
-        //
+        $seed=Seed::find($id); 
+        //return $pesticidesAo;
+        $seed->delete();
+        return redirect()->route('seed.index')
+            ->with('success', 'Product deleted successfully');
     }
 }

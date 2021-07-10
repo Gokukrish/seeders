@@ -17,7 +17,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () { 
 Route::resource('/fertilizer','FertilizerController');
 Route::resource('/form2','Form2Controller');
-Route::resource('/form3','Form3Controller')->middleware('pr');
+Route::resource('/form3','Form3Controller');//->middleware('pr')
 Route::resource('/form4','Form4Controller');
 Route::resource('/form5','Form5Controller');
 Route::resource('/fertilizerAo','FertilizerAoController');

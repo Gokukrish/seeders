@@ -39,6 +39,16 @@ class Form4Controller extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'period'=>'required',
+            'Insecticide_name'=>'required',
+            'Type_of_Insecticide'=>'required',
+            'Batch_no'=>'required',
+            'Date_Of_expiry'=>'required',
+            'Total_quantity'=>'required',
+            'Quantity_utilized'=>'required',
+            'Quantity_sold'=>'required',
+            ]);
         Form4::create($request->all());
         return back()->with('success', 'Created Successfully.');
     }
@@ -62,7 +72,7 @@ class Form4Controller extends Controller
      */
     public function edit(Form4 $form4)
     {
-        //
+        return view('form4.edit', compact('form4'));
     }
 
     /**
@@ -74,7 +84,18 @@ class Form4Controller extends Controller
      */
     public function update(Request $request, Form4 $form4)
     {
-        //
+        $request->validate([
+            'period'=>'required',
+            'Insecticide_name'=>'required',
+            'Type_of_Insecticide'=>'required',
+            'Batch_no'=>'required',
+            'Date_Of_expiry'=>'required',
+            'Total_quantity'=>'required',
+            'Quantity_utilized'=>'required',
+            'Quantity_sold'=>'required',
+            ]);
+            $form4->update($request->all());
+            return back()->with('success', 'Created Successfully.');
     }
 
     /**
@@ -83,8 +104,12 @@ class Form4Controller extends Controller
      * @param  \App\Form4  $form4
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Form4 $form4)
+    public function destroy($id)
     {
-        //
+        $form4=Form4::find($id); 
+        //return $pesticidesAo;
+        $form4->delete();
+        return redirect()->route('form4.index')
+            ->with('success', 'Product deleted successfully');
     }
 }

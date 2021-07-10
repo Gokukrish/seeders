@@ -28,19 +28,20 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('pesticides.store') }}" method="POST">
+            <form action="{{ route('pesticides.update', $pesticidesAo->id)}} " method="POST">
                 @csrf
+                @method('PUT')
                 
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="Individual_Name">Enter the Individual Name</label>
-                        <input type="text" name="Individual_Name" placeholder="Enter the  Individual Name"
+                        <input type="text" name="Individual_Name" value="{{$pesticidesAo->Individual_Name}}"
                             class="form-control" />
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="Firm_Name">Enter the Firm Name</label>
-                        <input type="text" name="Firm_Name" placeholder="Enter the Firm Name" class="form-control" />
+                        <input type="text" name="Firm_Name" value="{{$pesticidesAo->Firm_Name}}" class="form-control" />
                     </div>
                 </div>
 
@@ -48,12 +49,12 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="Address">Enter the Address</label>
-                        <input type="text" name="Address" placeholder="Enter the Address" class="form-control" />
+                        <input type="text" name="Address" value="{{$pesticidesAo->Address}}" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="Contact_Person">Enter the Contact Person</label>
-                        <input type="text" name="Contact_Person" placeholder="Enter the Contact Person"
+                        <input type="text" name="Contact_Person" value="{{$pesticidesAo->Contact_Person}}"
                             class="form-control" />
                     </div>
                 </div>
@@ -62,13 +63,13 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="Register_Mobile_No">Enter the Register Mobile No</label>
-                        <input type="text" name="Register_Mobile_No" placeholder="Enter the Register Mobile No"
+                        <input type="text" name="Register_Mobile_No" value="{{$pesticidesAo->Register_Mobile_No}}"
                             class="form-control" />
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="Licesence_No">Enter the Licesence No</label>
-                        <input type="text" name="Licesence_No" placeholder="Enter the Licesence No" class="form-control" />
+                        <input type="text" name="Licesence_No" value="{{$pesticidesAo->Licesence_No}}" class="form-control" />
                     </div>
                 </div>
 
@@ -76,7 +77,7 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="Date_of_expiry_Licence">Enter the Date of expiry Licence</label>
-                        <input type="text" name="Date_of_expiry_Licence" placeholder="Enter the Date of expiry Licence"
+                        <input type="text" name="Date_of_expiry_Licence" value="{{$pesticidesAo->Date_of_expiry_Licence}}"
                             class="form-control" />
                     </div>
                 </div>

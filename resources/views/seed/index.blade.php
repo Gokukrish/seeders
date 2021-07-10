@@ -50,9 +50,9 @@
             <td>
                 <div class="row">
                 
-                    <button class="btn btn-primary"><a style="color:white;" href="form5\{{$fertilizer->id}}\edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a></button>
+                    <button class="btn btn-primary"><a style="color:white;" href="{{route('seed.edit',$user->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a></button>
                     &nbsp;
-                    <form action="{{route('form5.destroy',$fertilizer->id)}}" method="post">
+                    <form action="{{route('seed.destroy',$fertilizer->id)}}" method="post">
                         <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                         @method('delete')
                         @csrf

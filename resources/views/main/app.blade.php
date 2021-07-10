@@ -8,9 +8,10 @@
     
     <link rel="stylesheet" href="{{ url('css/cs-skin-elastic.css') }}">
     <link rel="stylesheet" href="{{ url('css/base.css') }}" />
+    <link rel="stylesheet" href="{{url('css/sidebar.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@600&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <script src="https://use.fontawesome.com/abaf3f2102.js"></script>
     <title>Agri</title>
 </head>
 
@@ -96,6 +97,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/sidebar.js') }}"></script>
    
 </body>
 

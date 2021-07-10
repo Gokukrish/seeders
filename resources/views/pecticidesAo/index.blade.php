@@ -15,7 +15,7 @@
                <th>Registered Mobile</th>
                <th>License</th>
                <th>Date Of Expiry</th>
-
+               <th style="width: 20%" >Action</th>
             </tr>
         </thead>
         
@@ -33,7 +33,17 @@
                 <td>{{$user->Register_Mobile_No}}</td>
                 <td>{{$user->Licesence_No}}</td>
                 <td>{{$user->Date_of_expiry_Licence}}</td>
-               
+                <td>
+                    <div class="row">
+                        <button class="btn btn-primary"><a style="color:white;" href="{{route('pesticides.edit',$user->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a></button>
+                        &nbsp;
+                        <form action="{{route('pesticides.destroy',$user->id)}}" method="post">
+                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            @method('delete')
+                            @csrf
+                        </form>
+                    </div>
+                </td>
            </tr>
                
             @endforeach

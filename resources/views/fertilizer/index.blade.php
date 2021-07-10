@@ -32,6 +32,7 @@
                 <th>Qt sold in Cashless Transaction</th>
                 <th>No. of Cash Transaction</th>
                 <th>No. of Cashless Transaction</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +47,17 @@
                     <td>{{ $fertilizer->Cashless_Transaction }}</td>
                     <td>{{ $fertilizer->No_of_Cash }}</td>
                     <td>{{ $fertilizer->No_of_Cashless }}</td>
+                    <td>
+                        <div class="row">
+                            <a style="color:white;" href="fertilizer\{{$fertilizer->id}}\edit"><button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
+                            &nbsp;
+                            <form action="{{route('fertilizer.destroy', $fertilizer->id)}}" method="post">
+                                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                @method('delete')
+                                @csrf
+                            </form>
+                        </div>
+                    </td>
 
                 </tr>
             @endforeach

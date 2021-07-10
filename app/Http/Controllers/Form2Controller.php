@@ -72,7 +72,8 @@ class Form2Controller extends Controller
      */
     public function edit(Form2 $form2)
     {
-        //
+        //$fertilizers=Form2::find($form2->id)
+        return view('form2.edit',compact('form2'));
     }
 
     /**
@@ -84,7 +85,18 @@ class Form2Controller extends Controller
      */
     public function update(Request $request, Form2 $form2)
     {
-        //
+        $request->validate([
+            'Date'=>'required', 
+            'Retailer_name'=>'required',
+            'Product_Name'=>'required',
+            'Invoice'=>'required',
+            'Invoice_Date'=>'required', 
+            'Quantity_supplied'=>'required',
+            'company'=>'required'
+            ]);
+            $form2->update($request->all());
+            return redirect()->route('form2.index')
+                        ->with('success','form updated successfully');;
     }
 
     /**
@@ -93,8 +105,10 @@ class Form2Controller extends Controller
      * @param  \App\Form2  $form2
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Form2 $form2)
+    public function destroy($id)
     {
-        //
-    }
+        $form3=Form2::find($id); 
+        $form3->delete();
+        return redirect()->route('form2.index')->with('success', 'Product deleted successfully');
+    }       
 }

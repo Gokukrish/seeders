@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class sd
+class Sd
 {
     /**
      * Handle an incoming request.

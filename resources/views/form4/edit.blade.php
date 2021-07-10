@@ -3,39 +3,29 @@
 
 
     <br>
-    <h3 class="font-weight-bold">INSECTICIDES/PESTICIDES AVAILABILITY MONITORING INFORMATION SYSTEM </h3>
+    <h3 class="font-weight-bold" >INSECTICIDES/PESTICIDES AVAILABILITY MONITORING INFORMATION SYSTEM </h3>
     <br>
     <div class="card font-weight-bold">
-        <div class="card-header font-weight-bold">
-            	
-            MONTHLY RETURNS OF FORMULATED INSECTICIDES (MANUFACTURED/IMPORTED)
-
+        <div class="card-header">
+            MONTHLY RETURNS OF TECHNICAL GRADE INSECTICIDES/PESTICIDES (MANUFACTURED/IMPORTED)
         </div>
 
         <div class="card-body">
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-            
-            <form action="{{ route('form5.store') }}" method="POST">
+            <form action="{{ route('form4.update',$form4->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 
                 <div class="row">
                 <div class="form-group col-md-6">
-                <label for="Period"> Period of report </label>
-                <input type="month" name="Period" placeholder=" Period of report " class="form-control" />
+                <label for="period">Report for the period  </label>
+                <input type="month" name="period" value="{{$form4->period}}" class="form-control" />
                 </div>
                 
                 <div class="form-group col-md-6">
-                <label for="Insecticide_Name"> Name of the Insecticide </label>
-                <select type="text" name="Insecticide_Name" placeholder=" Name of the Insecticide " class="form-control" >
+                <label for="Insecticide_name"> Name of the Insecticide</label>
+                <select type="text" name="Insecticide_name"  class="form-control" >
+                    <option >{{$form4->Insecticide_name}}</option>
+
                     <option>2,4-D Amine salt</option>
                     <option>2,4-Dichlorophenoxy Acetic Acid</option>
                     <option>Abamectin*</option>
@@ -174,7 +164,8 @@
                     <option>Flusilazole (TI)</option>
                     <option>Fluthiacet methyl (TIM)</option>
                     <option>Fluvalinate</option>
-                    <option>Fluxapyroxad (Combination formulation Fluxapyroxad167 g/L + Pyraclostrobin 333g/l SC (FI -WRT)</option>
+                    <option>Fluxapyroxad (Combination formulation Fluxapyroxad167 g/L + Pyraclostrobin 333g/l SC (FI
+                        -WRT)</option>
                     <option>Fomesafen</option>
                     <option>Forchlorfenuron</option>
                     <option>Fosetyl-Al</option>
@@ -182,7 +173,8 @@
                     <option>Gossyplure (PB-RopeL)</option>
                     <option>Glufosinate Ammonium</option>
                     <option>Glyphosate</option>
-                    <option>Haloxyfop-R-methyl {Haloxyfop-R-methyl 10.55%.EC formulation under category (FI)}</option>
+                    <option>Haloxyfop-R-methyl {Haloxyfop-R-methyl 10.55%.EC formulation under category (FI)}
+                    </option>
                     <option>Helosulfuron methyl</option>
                     <option>Hexaconazole</option>
                     <option>Hexazinone</option>
@@ -192,7 +184,8 @@
                     <option>Imazethapyr</option>
                     <option>Imidacloprid</option>
                     <option>Imiprothrin</option>
-                    <option>Indaziflam { combination formulation Indaziflam+ Glyphosate ammonium under category (FI)}</option>
+                    <option>Indaziflam { combination formulation Indaziflam+ Glyphosate ammonium under category
+                        (FI)}</option>
                     <option>Indoxacarb</option>
                     <option>Iprobenfos (Kitazin)</option>
                     <option>Iprodione</option>
@@ -210,7 +203,8 @@
                     <option>Mandipropamid</option>
                     <option>Mepiquate Chloride</option>
                     <option>Meptyldiinocop</option>
-                    <option>Mesosulfuron Methyl ( combination formulation Mesosulfuron Methyl + Iodosulfuron Methyl Sodium)</option>
+                    <option>Mesosulfuron Methyl ( combination formulation Mesosulfuron Methyl + Iodosulfuron Methyl
+                        Sodium)</option>
                     <option>Metaflumizone</option>
                     <option>Metalaxyl</option>
                     <option>Metalaxyl-M</option>
@@ -283,7 +277,8 @@
                     <option>Quizalofop ethyl</option>
                     <option>Quizalofop-P-tefuryl</option>
                     <option>S-bioallethrin</option>
-                    <option>Sodium acifluorfen (Combination formulation Clodinafop-propargyl+ Sodium acifluorfen)</option>
+                    <option>Sodium acifluorfen (Combination formulation Clodinafop-propargyl+ Sodium acifluorfen)
+                    </option>
                     <option>Sodium paranitrophinolate</option>
                     <option>Spinetoram</option>
                     <option>Spinosad</option>
@@ -311,7 +306,8 @@
                     <option>Transfluthrin</option>
                     <option>Triacontanol</option>
                     <option>Triadimefon</option>
-                    <option>Triafamone ( combination formulation Triafamone 20% w/w + Ethoxysulfuron 10% WG % w/w SC FI)</option>
+                    <option>Triafamone ( combination formulation Triafamone 20% w/w + Ethoxysulfuron 10% WG % w/w SC
+                        FI)</option>
                     <option>Triallate</option>
                     <option>Triasulfuron</option>
                     <option>Trichodermaharzianum</option>
@@ -324,7 +320,6 @@
                     <option>Zinc Phosphide</option>
                     <option>Zineb</option>
                     <option>Ziram</option>
-                    
                 </select>
                 </div>
                 </div>
@@ -332,89 +327,54 @@
                 
                 <div class="row">
                 <div class="form-group col-md-6">
-                <label for="Type_Of_Insecticede"> Type of insecticide </label>
-                <select type="text" name="Type_Of_Insecticede" placeholder=" Type of insecticide " class="form-control" >
+                <label for="Type_of_Insecticide">Type of insecticide</label>
+                <select type="text" name="Type_of_Insecticide" placeholder="Type of insecticide" class="form-control" >
+                    <option >{{$form4->Type_of_Insecticide}}</option>
                     <option>Imported</option>
                     <option>Manufactured</option>
                 </select>
                 </div>
                 
                 <div class="form-group col-md-6">
-                <label for="Batch_No"> Batch No. </label>
-                <input type="text" name="Batch_No" placeholder=" Batch No. " class="form-control" />
+                <label for="Batch_no">Batch No. </label>
+                <input type="text" name="Batch_no" value="{{$form4->Batch_no}}" class="form-control" />
                 </div>
                 </div>
                 
                 
                 <div class="row">
                 <div class="form-group col-md-6">
-                <label for="Date_of_expiry">Date of expiry</label>
-                <input type="date" name="Date_of_expiry" placeholder="Date of expiry" class="form-control" />
+                <label for="Date_Of_expiry">Date of expiry  </label>
+                <input type="date" name="Date_Of_expiry" value="{{$form4->Date_Of_expiry}}" class="form-control" />
                 </div>
                 
                 <div class="form-group col-md-6">
-                <label for="Total_quantity">Details of total quantity of technical grade insecticide used for formulation(Metric tonnes)</label>
-                <input type="text" name="Total_quantity" placeholder="Details of total quantity of technical grade insecticide used for formulation(Metric tonnes)" class="form-control" />
+                <label for="Total_quantity">Details of total quantity imported/ manufactured (Metric tonnes)</label>
+                <input type="text" name="Total_quantity" value="{{$form4->Total_quantity}}" class="form-control" />
                 </div>
                 </div>
                 
                 
                 <div class="row">
                 <div class="form-group col-md-6">
-                <label for="Total_formulated">Total formulated/ Imported Quantity (Metric tonnes)</label>
-                <input type="text" name="Total_formulated" placeholder="Total formulated/ Imported Quantity (Metric tonnes)" class="form-control" />
+                <label for="Quantity_utilized">Quantity utilized for formulations (Metric tonnes) </label>
+                <input type="text" name="Quantity_utilized" value="{{$form4->Quantity_utilized}}" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Quantity_sold">Quantity sold </label>
+                    <input type="text" name="Quantity_sold" value="{{$form4->Quantity_sold}}" class="form-control" />
                 </div>
                 </div>
+                
                 <div class="p-3 mb-4">
-                    <div class="text-center">
-                    <button type="submit" name="add" id="add" class="btn btn-primary ">Add</button>
-                    </div>
+                <div class="text-center">
+                <button type="submit" name="add" id="add" class="btn btn-primary ">Add</button>
+                </div>
                 </div>
                 </form>
-               {{-- <form action="{{ route('form5.store') }}" method="POST">
-                 @csrf
-                 
-                 <div class="row">
-                    
-                    <div class="form-group col-md-6">
-                    <label for="">Period of report </label>
-                    <input type="month" name="Period" placeholder=" Period of report " class="form-control" />
-                    </div>
-                    
-                    <div class="form-group col-md-6">
-                        <label for=""> Name of the Insecticide  </label>
-                        <input type="text" name="Insecticide_Name" placeholder=" Name of the Insecticide " class="form-control" /></div>
-                    </div >
-                 <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for=""> Type of insecticide </label>
-                        <input type="text" name="Type_Of_Insecticede" placeholder=" Type of insecticide " class="form-control" /></div>
-                    <div class="form-group col-md-6">
-                        <label for="">Batch No. </label>
-                        <input type="text" name="Batch_No" placeholder=" Batch No. " class="form-control" /></div>
-                 </div >
-                 <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="">Date of expiry</label>
-                        <input type="date" name="Date_of_expiry" placeholder="Date of expiry" class="form-control" /></div>
-                    <div class="form-group col-md-6">
-                        <label for="">Details of total quantity of technical grade insecticide used for formulation(Metric tonnes)</label>
-                        <input type="text" name="Total_quantity" placeholder="Details of total quantity of technical grade insecticide used for formulation(Metric tonnes)" class="form-control" /></div>
-                 </div >
-                 <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="">Total formulated/ Imported Quantity (Metric tonnes) </label>
-                        <input type="text" name="Total_formulated" placeholder="Total formulated/ Imported Quantity (Metric tonnes)" class="form-control" /></div>
-                 </div >
-
-                 
-                <div class="row"><div class="form-group col-md-6"><button type="submit" name="add" id="add" class="btn btn-success">Add</button></div></div >
-                </form> --}}
-              
         </div>
     </div>
-    <br>
-    <br>
+
 
 @endsection
 

@@ -67,7 +67,7 @@ class FertilizerController extends Controller
      */
     public function show(Fertilizer $fertilizer)
     {
-      return view('fertilizer.show',compact('fertilizer'));
+      return view('fertilizer.show',compact('fertilizers'));
     }
 
     /**
@@ -78,7 +78,8 @@ class FertilizerController extends Controller
      */
     public function edit($id)
     {
-        return view('products.edit',compact('product'));
+        $fertilizer=Fertiliser::find($id);
+        return view('fertilizer.edit',compact('fertilizer'));
     }
 
     /**
@@ -104,7 +105,7 @@ class FertilizerController extends Controller
         $fertilizer->update($request->all());
 
         return redirect()->route('fertilizer.index')
-                        ->with('success','Product updated successfully');
+                        ->with('success','fertilizer updated successfully');
 
         
     }
@@ -115,11 +116,13 @@ class FertilizerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fertilizer $fertilizer )
+    public function destroy($id)
     {
+        $fertilizer =Fertiliser::find($id);
         $fertilizer->delete();
   
         return redirect()->route('fertilizer.index')
                         ->with('success','Product deleted successfully');
     }
+
 }

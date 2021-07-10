@@ -64,7 +64,7 @@ class FertilizerAoController extends Controller
      */
     public function show(FertilizerAo $fertilizerAo)
     {
-        //
+        return view('fertilizerAo.show',compact('post'));
     }
 
     /**
@@ -75,7 +75,8 @@ class FertilizerAoController extends Controller
      */
     public function edit(FertilizerAo $fertilizerAo)
     {
-        //
+        //$fertilizerAo=FertiliserAo::find($id);
+        return view('fertilizerAo.edit',compact('fertilizerAo'));
     }
 
     /**
@@ -87,7 +88,18 @@ class FertilizerAoController extends Controller
      */
     public function update(Request $request, FertilizerAo $fertilizerAo)
     {
-        //
+        $request->validate([
+            'Individual_Name'=>'required',
+            'Firm_Name'=>'required',
+            'Address'=>'required',
+            'Contact_Person'=>'required',
+            'Register_Mobile_No'=>'required',
+            'Licesence_No'=>'required',
+            'Date_of_expiry_Licence'=>'required',
+            ]);
+            $fertilizerAo->update($request->all());
+            return redirect()->route('fertilizerAo.index')
+                        ->with('success','fertilizerAo updated successfully');
     }
 
     /**
@@ -96,8 +108,12 @@ class FertilizerAoController extends Controller
      * @param  \App\FertilizerAo  $fertilizerAo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FertilizerAo $fertilizerAo)
+    public function destroy($id)
     {
-        //
+        $fertilizer = FertilizerAo::find($id);
+        $fertilizer->delete();
+  
+        return redirect()->route('fertilizerAo.index')
+                        ->with('success','Product deleted successfully');
     }
 }
